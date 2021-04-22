@@ -32,5 +32,22 @@ for (var i = 0; i < classe33.length; i++) {
 }
 
 // Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+classe33.push({});
+
+var nomeUtente = prompt("Inserisci il tuo nome: ")
+var cognomeUtente = prompt("Inserisci il tuo cognome: ")
+var etàUtente = prompt("Inserisci la tua età: ")
+
+classe33[3] = {
+    'nome': nomeUtente,
+    'cognome': cognomeUtente,
+    'età': etàUtente
+}
+
+
+
+
+
+
 
 
