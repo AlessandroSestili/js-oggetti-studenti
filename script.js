@@ -30,23 +30,74 @@ for (var i = 0; i < classe33.length; i++) {
     stampaProprietàOggetto(classe33[i]);
 }
 
-// Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
-classe33.push({});
+// Chiedi all'Utente se vuole aggiungere uno studente 
+var sceltaUtente = prompt("Vuoi entrare in classe? Scrivi si o no.").toLowerCase();
 
-// Chiedo all'utente
-var nomeUtente = prompt("Inserisci il tuo nome: ")
-var cognomeUtente = prompt("Inserisci il tuo cognome: ")
-var etàUtente = prompt("Inserisci la tua età: ")
+if (sceltaUtente === "si") {
 
-// Aggiungo all'Array classe33 i dati inseriti dall'Utente
-classe33[3] = {
-    'nome': nomeUtente,
-    'cognome': cognomeUtente,
-    'età': etàUtente
+    // Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+    classe33.push({});
+
+    // Chiedo all'utente
+
+    var check1 = true;
+    while (check1) {
+        var nomeUtente = prompt("Inserisci il tuo nome: ").toLowerCase();
+
+        if (isNaN(nomeUtente)) {
+            
+            check1 = false;
+        } else {
+            alert("Da quando gli umani usano numeri nei nomi?")
+        }
+    }
+
+    var check2 = true;
+    while (check2) {
+        var cognomeUtente = prompt("Inserisci il tuo cognome: ").toLowerCase();
+
+        if (isNaN(cognomeUtente)) {
+            check2 = false;
+        } else {
+            alert("Sei per caso il figlio di Elon Musk?")
+        }
+    }
+
+    var check3 = true;
+    while (check3) {
+        var etàUtente = parseInt(prompt("Inserisci la tua età: "));
+
+        if (!Number.isNaN(etàUtente)) {
+            check3 = false;
+        } else {
+            alert("Inserisci la tua età. Non fregare!")
+        }
+    }
+
+    // Aggiungo all'Array classe33 i dati inseriti dall'Utente
+    classe33[3] = {
+        'nome': nomeUtente,
+        'cognome': cognomeUtente,
+        'età': etàUtente
+    }
+
+    console.log("Questi sono tutti i tuoi compagni ", classe33);
+    console.log("E questo sei tu... ", classe33[3]);
+
+} else if (sceltaUtente == "no") {
+
+    alert("Va bè fa niente...")
+
+    console.log("Non sbirciare, ti vedo!");
+
+} else {
+    alert("Sono una macchina, capisco solo si o no. 😅")
+
+    console.log("Umano, cosa stai facendo ancora qui?");
 }
 
-console.log(classe33);
-console.log(classe33[3]);
+
+
 
 
 
